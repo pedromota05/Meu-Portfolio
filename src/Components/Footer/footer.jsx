@@ -13,9 +13,6 @@ export const Footer =() => {
                 <a className="btn btn-link btn-floating btn-lg text-dark m-1" href="https://twitter.com/PedroMo86619622" role="button" data-mdb-ripple-color="dark" target="_blank" rel="noreferrer">
                   <i className="fab fa-twitter"></i>
                 </a>
-                <a className="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark" target="_blank" rel="noreferrer">
-                  <i className="fab fa-google"></i>
-                </a>
                 <a className="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/pedro_mota5/" role="button" data-mdb-ripple-color="dark" target="_blank" rel="noreferrer">
                   <i className="fab fa-instagram"></i>
                 </a>
@@ -28,8 +25,7 @@ export const Footer =() => {
               </section>
             </div>
             <div className="text-center text-muted p-3 border-top" style={{backgroundColor: 'rgba(189, 189, 189, 0.2)'}}>
-              © 2022 Copyright:
-              <a className="text-muted" href="/"> Pedro Mota</a>
+              © 2022 Copyright: <a className="text-muted" href="/">Pedro Mota</a>
             </div>
           </footer>
 

@@ -1,15 +1,46 @@
+import { useState } from 'react';
+import emailjs from '@emailjs/browser'
+
 export const Body =() => {
   var perfil=require('./img/about.jpg');
+
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    if (name === '' || email === '' || message === '') {
+        alert('Preencha todos os campos');
+        return;
+    }
+
+    const templateParams = {
+        from_name: name,
+        message: message,
+        email: email
+    }
+    emailjs.send("service_8m48wwm", "template_5qjf03p", templateParams, "XUMrLYGY33XfL1lin")
+    .then((response) => {
+        console.log("Email enviado", response.status, response.text);
+        setName('')
+        setEmail('')
+        setMessage('')
+    }, (error) => {
+        console.log("Erro: ", error);
+    })
+  }
     return(
         <div>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic"></link>
           
-          <section className="py-5">
-            <div className="container py-5" style={{marginTop: '50px'}}>
+          <section className="py-site">
+            <div className="container py-5 body-site">
               <div className="row">
                 <div className="col-lg-10">
-                  <h1 style={{fontWeight: 'bold', fontSize: '2.8rem'}}>HELLO, WORLD.<br/>Sou <span style={{color: '#1488D4'}}>Pedro Mota</span>, tenho experiência em Front-end Designer +<span style={{color: '#1488D4'}}> Developer</span>, que mora em Dourados-MS/Brasil</h1>
+                  <h1 style={{fontWeight: 'bold', fontSize: '2.7rem'}}>HELLO, WORLD!<br/>Me chamo <span style={{color: '#1488D4'}}>Pedro Mota</span> e sou um Front-end Designer + <span style={{color: '#1488D4'}}> Developer</span> com experiência, residente em Dourados, MS, Brasil.</h1>
                 </div>
               </div>
             </div>
@@ -20,24 +51,28 @@ export const Body =() => {
               <h2 className="text-md lined" style={{fontWeight: 'bold'}}>About me</h2>
               <div className="row">
                 <div className="col-lg-6">
-                  <p className="mb-4">Eu sou um programador, com experiência maior em front-end e um conhecimento relevante em back-end. Para o front-end, geralmente trabalho com <strong>Javascript, independente ou incluindo frameworks populares como ReactJS e NextJS</strong>. Eu também deixo o front-end bonito usando o <strong>framework Bootstrap</strong>, mas também utilizando os meus conhecimentos de CSS puro.
-                  Para o back-end também trabalho com Javascript <strong>(NodeJS, Express, MySQL, MongoDB)</strong>.
+                    <p className="mb-1" style={{textAlign: 'justify'}}>Sou formado em Técnico em Informática para Internet pelo <strong>IFMS - Campus Dourados</strong> e cursando Sistemas de Informação na <strong>UFGD</strong>.</p>
+                  <p className="mb-4" style={{textAlign: 'justify'}}>Eu sou um programador com ampla experiência em front-end e um conhecimento sólido em back-end. No front-end, tenho expertise em <strong>Javascript, frequentemente utilizando frameworks populares como React.js, Next.js, Vue.js</strong>. Além disso, utilizo os <strong>frameworks Bootstrap e Quasar</strong> para criar interfaces visualmente atraentes e também aplico meus conhecimentos em CSS puro para personalizar ainda mais os projetos.
+                  Para o back-end, tenho proficiência em Javascript, trabalhando com tecnologias como <strong>(Node.js, Express e Strapi)</strong> para desenvolver APIs robustas e escaláveis. Além disso, tenho experiência em bancos de dados relacionais, como <strong>MySQL</strong>, e não relacionais, como <strong>MongoDB</strong>, garantindo que as aplicações tenham acesso eficiente e seguro aos dados, independentemente do modelo de banco de dados utilizado.
                   </p>
-                  <img src={perfil} alt="Minha foto" className="img-fluid rounded-circle" style={{marginTop: '60px'}}></img>
+                  <img src={perfil} alt="Minha foto" className="img-fluid rounded-circle"></img>
                 </div>
                 <div className="col-lg-6">
-                  <p className="mb-4 personal">
-                    <strong>• HABILIDADES PESSOAIS</strong><br/>
-                    Não tenho dificuldades para o trabalho em equipe;<br/>
-                    Tenho facilidade em aprender o que me for designado;<br/>
-                    Tenho habilidades em Hardware;</p>
-                  <p className="mb-4">
-                    <strong className="profiss">• HABILIDADES PROFISSIONAIS</strong><br/>
-                    Estágio Supervisionado no Centro de Recondicionamento de Computadores Dourados<br/>
-                    Instituição: Instituto Federal de Mato Grosso do Sul – Campus Dourados – IFMS<br/>
-                    C.H: 120 horas<br/>
-                    Período: de março a agosto de 2022
-                  </p>
+                    <div className="mb-2">
+                        <strong className="profiss">•• HABILIDADES PROFISSIONAIS</strong>
+                    </div>
+                    <div className="mb-4" style={{textAlign: 'justify'}}>
+                        <p style={{fontWeight: '600'}} className="mb-1">• Estágio Supervisionado no Centro de Recondicionamento de Computadores Dourados</p>
+                        <p className="mb-1"><strong>Instituição:</strong> Instituto Federal de Mato Grosso do Sul – Campus Dourados – IFMS</p>
+                        <p className="mb-1"><strong>C.H:</strong> 120 horas</p>
+                        <p className="mb-1"><strong>Período:</strong> de março a agosto de 2022</p>
+                    </div>
+                    <div className="mb-4" style={{textAlign: 'justify'}}>
+                        <p style={{fontWeight: '600'}} className="mb-1">• Estágio na Embrapa Agropecuária Oeste</p>
+                        <p className="mb-1"><strong>Função:</strong> Desenvolvimento de aplicações PWA para utilização no campo de forma offline</p>
+                        <p className="mb-1"><strong>Link da aplicação:</strong> <a className="link-site" href="https://tecnofamapp.cpao.embrapa.br/" target="_blank" rel="noopener noreferrer">Tecnofam App <i className="fas fa-external-link-alt"></i></a></p>
+                        <p className="mb-1"><strong>Período:</strong> de Julho 2023 até o momento</p>
+                    </div>
                   <div className="py-2 mb-2">
                     <p className="small text-muted text-uppercase mb-0" style={{fontWeight: 'bold'}}>HTML Coding</p>
                     <div className="progress">
@@ -65,13 +100,13 @@ export const Body =() => {
                   <div className="py-2 mb-2">
                     <p className="small text-muted text-uppercase mb-0" style={{fontWeight: 'bold'}}>React.JS and Next.JS</p>
                     <div className="progress">
-                      <div role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style={{width: '60%'}} className="progress-bar progress-primary-3"></div>
+                      <div role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style={{width: '80%'}} className="progress-bar progress-primary-3"></div>
                     </div>
                   </div>
                   <div className="py-2 mb-2">
-                    <p className="small text-muted text-uppercase mb-0" style={{fontWeight: 'bold'}}>MySQL</p>
+                    <p className="small text-muted text-uppercase mb-0" style={{fontWeight: 'bold'}}>MySQL and Strapi</p>
                     <div className="progress">
-                      <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style={{width: '70%'}} className="progress-bar progress-primary-3"></div>
+                      <div role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style={{width: '60%'}} className="progress-bar progress-primary-3"></div>
                     </div>
                   </div>
                 </div>
@@ -80,7 +115,7 @@ export const Body =() => {
           </section>
 
           <section className="py-5 border-top border-bottom bg-light" style={{marginTop: '30px'}}>
-            <div className="container py-5">
+            <div className="container py-4">
               <div className="row">
                 <div className="col-lg-2 col-md-4 col-6"><img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="something" data-toggle="tooltip" data-placement="bottom" title="Customer 1" className="customer img-fluid d-block mx-auto m-2 p-4 p-md-0"/></div>
                 <div className="col-lg-2 col-md-4 col-6"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="something" data-toggle="tooltip" data-placement="bottom" title="Customer 2" className="customer img-fluid d-block mx-auto m-2 p-4 p-md-0"/></div>
@@ -88,6 +123,12 @@ export const Body =() => {
                 <div className="col-lg-2 col-md-4 col-6"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" alt="something" data-toggle="tooltip" data-placement="bottom" title="Customer 4" className="customer img-fluid d-block mx-auto m-2 p-4 p-md-0"/></div>
                 <div className="col-lg-2 col-md-4 col-6"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="something" data-toggle="tooltip" data-placement="bottom" title="Customer 5" className="customer img-fluid d-block mx-auto m-2 p-4 p-md-0"/></div>
                 <div className="col-lg-2 col-md-4 col-6"><img src="https://www.vectorlogo.zone/logos/mysql/mysql-official.svg" alt="something" data-toggle="tooltip" data-placement="bottom" title="Customer 6" className="customer img-fluid d-block mx-auto m-2 p-4 p-md-0"/></div>
+                <div className="col-lg-2 col-md-4 col-6 mt-4"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="something" data-toggle="tooltip" data-placement="bottom" title="Customer 6" className="customer img-fluid d-block mx-auto m-2 p-4 p-md-0"/></div>
+                <div className="col-lg-2 col-md-4 col-6 mt-4"><img src="https://cdn.worldvectorlogo.com/logos/next-js.svg" alt="something" data-toggle="tooltip" data-placement="bottom" title="Customer 6" className="customer img-fluid d-block mx-auto m-2 p-4 p-md-0"/></div>
+                <div className="col-lg-2 col-md-4 col-6 mt-4"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" alt="something" data-toggle="tooltip" data-placement="bottom" title="Customer 6" className="customer img-fluid d-block mx-auto m-2 p-4 p-md-0"/></div>
+                <div className="col-lg-2 col-md-4 col-6 mt-4"><img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" alt="something" data-toggle="tooltip" data-placement="bottom" title="Customer 2" className="customer img-fluid d-block mx-auto m-2 p-4 p-md-0"/></div>
+                <div className="col-lg-2 col-md-4 col-6 mt-4"><img src="https://cdn.quasar.dev/logo-v2/svg/logo.svg" alt="something" data-toggle="tooltip" data-placement="bottom" title="Customer 6" className="customer img-fluid d-block mx-auto m-2 p-4 p-md-0"/></div>
+                <div className="col-lg-2 col-md-4 col-6 mt-4"><img src="https://www.svgrepo.com/show/354398/strapi.svg" alt="something" data-toggle="tooltip" data-placement="bottom" title="Customer 6" className="customer img-fluid d-block mx-auto m-2 p-4 p-md-0"/></div>
               </div>
             </div>
           </section>
@@ -105,7 +146,7 @@ export const Body =() => {
                           <font style={{verticalAlign: 'inherit'}}><font style={{verticalAlign: 'inherit', fontWeight: 'bold'}}>Localização:</font></font>
                         </h4>
                         <p>
-                          <font style={{verticalAlign: 'inherit'}}><font style={{verticalAlign: 'inherit'}}>Rua Eulália Pires, Nº 245 - Vila Cachoeirinha/MS</font></font>
+                          <font style={{verticalAlign: 'inherit'}}><font style={{verticalAlign: 'inherit'}}>Vila Cachoeirinha Dourados / MS</font></font>
                         </p>
                       </div>
                       <div className="email"> 
@@ -131,26 +172,22 @@ export const Body =() => {
                  
                 </div>
                 <div className="col-lg-6 mb-4 mb-lg-0">
-                  <form id="contact-form" method="post" className="contact-form form">
+                  <form id="contact-form" className="contact-form form" onSubmit={sendEmail}>
                     <div className="row">
-                      <div className="form-group col-lg-6">
-                        <label htmlFor="name" className="font-weight-normal first-name">Seu primeiro nome *</label>
-                        <input id="name" type="text" name="name" placeholder="Digite seu primeiro nome" required className="form-control" style={{marginTop: '10px'}}/>
-                      </div>
-                      <div className="form-group col-lg-6">
-                        <label htmlFor="surname" className="font-weight-normal last-name">Seu último nome *</label>
-                        <input id="surname" type="text" name="surname" placeholder="Digite seu sobrenome" required className="form-control" style={{marginTop: '10px'}}/>
+                      <div className="form-group col-lg-12">
+                        <label htmlFor="name" className="font-weight-normal first-name">Seu nome *</label>
+                        <input id="name" type="text" placeholder="Digite o seu nome" required className="form-control input" onChange={(e) => setName(e.target.value)} value={name} style={{marginTop: '10px'}}/>
                       </div>
                       <div className="form-group col-lg-12">
                         <label htmlFor="email" className="font-weight-normal" style={{marginTop: '15px'}}>Seu e-mail *</label>
-                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required className="form-control" style={{marginTop: '10px'}}/>
+                        <input id="email" type="email" placeholder="Digite seu e-mail" required className="form-control input" onChange={(e) => setEmail(e.target.value)} value={email} style={{marginTop: '10px'}}/>
                       </div>
                       <div className="form-group col-lg-12">
                         <label htmlFor="message" className="font-weight-normal" style={{marginTop: '15px'}}>Sua mensagem para mim *</label>
-                        <textarea id="message" rows="4" name="message" placeholder="Digite sua mensagem" required className="form-control" style={{marginTop: '10px'}}></textarea>
+                        <textarea id="message" rows="4" placeholder="Digite sua mensagem" required className="form-control textarea" onChange={(e) => setMessage(e.target.value)} value={message} style={{marginTop: '10px'}}></textarea>
                       </div>
                       <div className="form-group col-lg-12" style={{marginTop: '20px'}}>
-                        <button type="submit" className="btn btn-block border-radius-none">Enviar Mensagem</button>
+                        <button type="submit" className="btn btn-block border-radius-none" value="Enviar">Enviar Mensagem</button>
                       </div>
                     </div>
                   </form>
