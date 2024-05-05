@@ -1,39 +1,81 @@
-export const Cabecalho =() => {
-  var logo=require('./img/logo-01.png');
-    return(
+import React, { useState, useEffect } from 'react';
+
+export const Cabecalho = () => {
+    var logo=require('./img/logo-01.png');
+
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const closeMenu = () => {
+        const backdrop = document.querySelector('.offcanvas-backdrop');
+        if (backdrop) {
+            backdrop.classList.remove('show');
+        }
+        setIsMenuOpen(false);
+    };    
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    return (
         <div>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic"></link>
-
-          <nav className="navbar navbar-expand-lg bg-light border-bottom fixed-top">
-            <div className="container-fluid">
-              <a className="navbar-brand" href="/"><img src={logo} alt="Logo Pedro Mota"/></a>
-              <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
-                <div className="offcanvas-header">
-                    <h5 className="offcanvas-title" id="offcanvasNavbarLightLabel">Pedro Mota</h5>
-                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <nav className={`navbar navbar-expand-lg bg-light border-bottom fixed-top ${isScrolled ? 'active' : ''}`} aria-label="Offcanvas navbar large">
+                <div className="container-fluid">
+                    <a className="navbar-brand" href="/">
+                        <img src={logo} alt="Logo Pedro Mota"/>
+                    </a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" onClick={toggleMenu}>
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className={`offcanvas offcanvas-end ${isMenuOpen ? 'show' : ''}`} tabIndex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+                        <div className="offcanvas-header">
+                            <img src={logo} alt="Logo Pedro Mota"/>
+                            <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" onClick={closeMenu}></button>
+                        </div>
+                        <hr className="featurette-divider" />
+                        <div className='offcanvas-body'>
+                            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li className="nav-item">
+                                    <a className="nav-link text-decoration-none" aria-current="page" href="/" onClick={closeMenu}><i className="fas fa-home nav-icon"></i> Home</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link text-decoration-none" href="#about" onClick={closeMenu}><i className="fas fa-user-circle nav-icon"></i> About me</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link text-decoration-none" href="#contato" onClick={closeMenu}><i className="fas fa-phone-square-alt nav-icon"></i> Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div className='offcanvas-body'>
-                    <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li className="nav-item">
-                        <a className="nav-link text-decoration-none" aria-current="page" href="#!">Home</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-decoration-none" href="#about">About me</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-decoration-none" href="#contato">Contato</a>
-                    </li>
-                    </ul>
-                </div>
-              </div>
-            </div>
-          </nav>
-
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+            </nav>
+            <a href="#top" className={`back-top-btn ${isScrolled ? 'active' : ''}`} aria-label="back to top" data-back-top-btn onClick={scrollToTop}>
+                <i className="fas fa-chevron-up"></i>
+            </a>
         </div>
     )
 }

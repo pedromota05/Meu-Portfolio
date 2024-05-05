@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
-*{
+* {
   font-family: 'Open Sans', sans-serif;
   text-decoration: none;
 }
@@ -14,6 +14,10 @@ body {
   background-color: #fff;
 }
 
+hr {
+  margin: 0.2rem 0 !important;
+}
+
 .py-site {
   padding-top: 3rem;
   padding-bottom: 1rem;
@@ -23,6 +27,7 @@ body {
   margin-top: 20px;
 }
 
+/* Navbar CSS */
 .navbar-toggler {
   border: none !important;
   outline: none !important;
@@ -39,15 +44,44 @@ body {
   margin-left: 20px;
 }
 
+.offcanvas.offcanvas-end {
+  width: 83vw !important;
+  border-left: none !important;
+}
+
+.offcanvas-header img {
+  width: auto;
+  height: 40px;
+}
+
+.featurette-divider {
+  display: none;
+}
+
 .navbar .navbar-nav {
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
   color: #BDBDBD;
+}
+
+.nav-icon {
+  margin-right: 5px;
+}
+
+.offcanvas-backdrop.opacidade-zero {
+  opacity: 0 !important;
+  transition: opacity 0.3s ease-in-out; /* Adicione uma transição para uma mudança suave de opacidade */
+}
+/* Fim Navbar CSS */
+
+.introduction-title {
+  font-size: 2.7rem;
+  font-weight: bold;
 }
 
 .col-6 .customer {
   width: auto;
-  height: 100px;
+  height: 80px;
 }
 
 .info {
@@ -123,26 +157,6 @@ body {
 
 .fa-external-link-alt {
   font-size: 14px;
-}
-
-@media (max-width:992px) {
-  .col-lg-6 .personal {
-    margin-top: 30px;
-    line-height: 35px;
-  }
-
-  .contact-form {
-    margin-top: 20px;
-  }
-
-  .form-group .last-name {
-    margin-top: 10px;
-  }
-
-  .col-lg-6 .rounded-circle {
-    display: block;
-    margin: 30px auto !important;
-  }
 }
 
 .col-lg-6 .rounded-circle {
@@ -318,6 +332,78 @@ select.form-control:focus::-ms-value {
 
 .btn-link .fab:hover{
   color: #1488D4;
+}
+
+/*-----------------------------------*\
+  #BACK TO TOP
+\*-----------------------------------*/
+
+.back-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  color: #1488D4;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 2px solid #BDBDBD;
+  transition: 0.25s ease;
+  visibility: hidden;
+  opacity: 0;
+  text-decoration: none;
+  z-index: 999;
+}
+
+.back-top-btn:is(:hover, :focus-visible) { box-shadow: 0px 3px 20px hsla(180, 90%, 43%, 0.2); }
+
+.back-top-btn.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+@media (max-width: 992px) {
+  .col-lg-6 .personal {
+    margin-top: 30px;
+    line-height: 35px;
+  }
+
+  .contact-form {
+    margin-top: 20px;
+  }
+
+  .form-group .last-name {
+    margin-top: 10px;
+  }
+
+  .col-lg-6 .rounded-circle {
+    display: block;
+    margin: 35px auto !important;
+  }
+
+  .introduction-title {
+    font-size: 1.9rem;
+  }
+
+  .navbar-brand img {
+    margin-left: 5px;
+  }
+
+  .offcanvas-body {
+    padding: 0 1rem !important;
+  }
+
+  .py-site {
+    padding-top: 2rem;
+    padding-bottom: 0;
+  }
+
+  .featurette-divider {
+    display: block;
+  }
 }
 
 @media (max-width: 767px) {
