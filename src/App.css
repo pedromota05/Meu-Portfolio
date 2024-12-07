@@ -12,6 +12,7 @@ body {
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
+  min-width: 300px;
 }
 
 hr {
@@ -153,6 +154,11 @@ hr {
   color: #212529;
   font-weight: 600;
   text-decoration: none;
+  margin-left: 10px;
+}
+
+.link-site:hover {
+  text-decoration: underline;
 }
 
 .fa-external-link-alt {
@@ -160,9 +166,8 @@ hr {
 }
 
 .col-lg-6 .rounded-circle {
-  width: 350px;
-  height: 350px;
-  margin-top: 65px;
+  display: block;
+  margin: 65px auto 0 auto;
 }
 
 /* Style Bootstrap */
@@ -407,7 +412,7 @@ select.form-control:focus::-ms-value {
 }
 
 @media (max-width: 767px) {
-  .col-6 .customer{
-    height: 150px;
+  .col-6 .customer {
+    height: 125px;
   }
 }

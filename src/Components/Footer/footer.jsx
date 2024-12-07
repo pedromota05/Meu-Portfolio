@@ -2,7 +2,7 @@ export const Footer = () => {
     return (
         <div>  
             <footer className="text-center text-white" style={{backgroundColor: '#ffffff'}}>
-                <div className="container pt-4">
+                <div className="container">
                     <section className="mb-4">
                         <a className="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.facebook.com/pedro.mota.14811" role="button" data-mdb-ripple-color="dark" target="_blank" rel="noreferrer">
                             <i className="fab fa-facebook-f"></i>

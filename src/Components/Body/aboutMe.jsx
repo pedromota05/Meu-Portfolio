@@ -1,5 +1,5 @@
 export const AboutMe = () => {
-    var perfil=require('./img/about.jpg');
+    var perfil=require('./img/foto-cortada.jpg');
     return (
         <section id="about">
             <div className="container">
@@ -24,14 +24,19 @@ export const AboutMe = () => {
                         </div>
                         <div className="mb-4">
                             <p style={{fontWeight: '600'}} className="mb-1">• Estagiário na Embrapa Agropecuária Oeste</p>
-                            <p className="mb-1"><strong>Função:</strong> Desenvolvimento de aplicações PWA para utilização no campo de forma offline</p>
-                            <p className="mb-1"><strong>Link da aplicação:</strong> <a className="link-site" href="https://tecnofamapp.cpao.embrapa.br/" target="_blank" rel="noopener noreferrer">Tecnofam App <i className="fas fa-external-link-alt"></i></a></p>
+                            <p className="mb-1">Desenvolvimento de aplicações PWA para utilização no campo de forma offline e participação no desenvolvimento dos projetos GuiaClima e ProCpao.</p>
+                            <p className="mb-1"><strong>Link das aplicações:</strong> 
+                                <a className="link-site" href="https://tecnofamapp.cpao.embrapa.br/" target="_blank" rel="noopener noreferrer">Tecnofam App <i className="fas fa-external-link-alt"></i></a>
+                                <a className="link-site" href="https://bpapisoja.cpao.embrapa.br/" target="_blank" rel="noopener noreferrer">Bpapi Soja <i className="fas fa-external-link-alt"></i></a>
+                                <a className="link-site" href="https://mpsoja.cpao.embrapa.br/" target="_blank" rel="noopener noreferrer">Mp Soja <i className="fas fa-external-link-alt"></i></a>
+                                <a className="link-site" href="https://www.cpao.embrapa.br/gc" target="_blank" rel="noopener noreferrer">Guia Clima <i className="fas fa-external-link-alt"></i></a>
+                            </p>
                             <p className="mb-1"><strong>Período:</strong> de Julho 2023 até o momento</p>
                         </div>
                         <div className="py-2 mb-2">
                             <p className="small text-muted text-uppercase mb-0" style={{fontWeight: 'bold'}}>HTML Coding</p>
                             <div className="progress">
-                            <div role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style={{width: '80%'}} className="progress-bar progress-primary-4"></div>
+                            <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style={{width: '70%'}} className="progress-bar progress-primary-4"></div>
                             </div>
                         </div>
                         <div className="py-2 mb-2">
@@ -55,13 +60,13 @@ export const AboutMe = () => {
                         <div className="py-2 mb-2">
                             <p className="small text-muted text-uppercase mb-0" style={{fontWeight: 'bold'}}>React.JS and Next.JS</p>
                             <div className="progress">
-                            <div role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style={{width: '80%'}} className="progress-bar progress-primary-3"></div>
+                            <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style={{width: '70%'}} className="progress-bar progress-primary-3"></div>
                             </div>
                         </div>
                         <div className="py-2 mb-2">
                             <p className="small text-muted text-uppercase mb-0" style={{fontWeight: 'bold'}}>MySQL and Strapi</p>
                             <div className="progress">
-                            <div role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style={{width: '60%'}} className="progress-bar progress-primary-3"></div>
+                            <div role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style={{width: '50%'}} className="progress-bar progress-primary-3"></div>
                             </div>
                         </div>
                     </div>
