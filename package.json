@@ -41,5 +41,8 @@
   },
   "devDependencies": {
     "browserslist": "^4.23.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }

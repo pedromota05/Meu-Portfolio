@@ -12,7 +12,7 @@ body {
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
-  min-width: 300px;
+  min-width: 340px;
 }
 
 hr {
@@ -335,8 +335,28 @@ select.form-control:focus::-ms-value {
   background-color: #fff;
 }
 
-.btn-link .fab:hover{
-  color: #1488D4;
+.btn-link .fa-facebook-f:hover{
+  color: #1877F2;
+}
+
+.btn-link .fa-twitter:hover{
+  color: #1DA1F2;
+}
+
+.btn-link .fa-instagram:hover {
+  background: linear-gradient(45deg, #fdc468 0%, #df4996 50%, #4f5bd5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-link .fa-linkedin:hover{
+  color: #0A66C2;
+}
+
+.btn-link .fa-github:hover{
+  color: #181717;
 }
 
 /*-----------------------------------*\
@@ -370,49 +390,67 @@ select.form-control:focus::-ms-value {
   transform: translateY(-10px);
 }
 
+@media (min-width: 768px) and (max-width: 992px) {
+  .image-bottom {
+    margin-top: 30px;
+  }
+}
+
 @media (max-width: 992px) {
   .col-lg-6 .personal {
     margin-top: 30px;
     line-height: 35px;
   }
-
   .contact-form {
     margin-top: 20px;
   }
-
   .form-group .last-name {
     margin-top: 10px;
   }
-
   .col-lg-6 .rounded-circle {
     display: block;
     margin: 35px auto !important;
   }
-
   .introduction-title {
-    font-size: 1.9rem;
+    font-size: 1.95rem;
   }
-
+  .text-introduction p {
+    font-size: 0.95rem;
+  }
   .navbar-brand img {
     margin-left: 5px;
   }
-
   .offcanvas-body {
     padding: 0 1rem !important;
   }
-
   .py-site {
     padding-top: 2rem;
     padding-bottom: 0;
   }
-
   .featurette-divider {
     display: block;
   }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 769px) {
+  .padding-framework {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
   .col-6 .customer {
     height: 125px;
+  }
+  .padding-framework {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 340px) {
+  .col-6 .customer {
+    height: 100px;
   }
 }

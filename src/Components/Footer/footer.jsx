@@ -1,9 +1,9 @@
 export const Footer = () => {
     return (
         <div>  
-            <footer className="text-center text-white" style={{backgroundColor: '#ffffff'}}>
+            <footer className="text-center text-white border-top" style={{backgroundColor: '#f8f9fa'}}>
                 <div className="container">
-                    <section className="mb-4">
+                    <section className="mt-3 mb-3">
                         <a className="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.facebook.com/pedro.mota.14811" role="button" data-mdb-ripple-color="dark" target="_blank" rel="noreferrer">
                             <i className="fab fa-facebook-f"></i>
                         </a>

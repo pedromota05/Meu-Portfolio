@@ -1,18 +1,18 @@
 export const AboutMe = () => {
     var perfil=require('./img/foto-cortada.jpg');
     return (
-        <section id="about">
+        <section id="">
             <div className="container">
                 <h2 className="text-md lined" style={{fontWeight: 'bold'}}>About me</h2>
                 <div className="row">
-                    <div className="col-lg-6" style={{textAlign: 'justify', lineHeight: 1.8}}>
+                    <div className="col-lg-6 text-introduction" style={{textAlign: 'justify', lineHeight: 1.8}}>
                         <p className="mb-4">Sou um profissional com formação em Técnico em Informática para Internet pelo <strong>IFMS - Campus Dourados</strong> e atualmente cursando Sistemas de Informação na <strong>UFGD</strong>.
                         Minha experiência abrange tanto front-end quanto back-end, com especialização em Javascript. No front-end, utilizo frameworks populares como <strong>React.js, Next.js e Vue.js</strong>, além dos frameworks <strong>Bootstrap e Quasar</strong> para criar interfaces visualmente atrativas. Também aplico CSS puro para personalização adicional.
                         No back-end, tenho proficiência em tecnologias como <strong>(Node.js, Express e Strapi)</strong> para desenvolver APIs robustas e escaláveis. Além disso, tenho experiência em bancos de dados relacionais, como <strong>MySQL</strong>, e não relacionais, como <strong>MongoDB</strong>, garantindo que as aplicações tenham acesso eficiente e seguro aos dados.
                         </p>
                         <img src={perfil} alt="Minha foto" className="img-fluid rounded-circle" />
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 text-introduction">
                         <div className="mb-2">
                             <strong className="profiss">HABILIDADES PROFISSIONAIS</strong>
                         </div>

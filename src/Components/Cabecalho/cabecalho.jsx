@@ -43,7 +43,7 @@ export const Cabecalho = () => {
 
     return (
         <div>
-            <nav className={`navbar navbar-expand-lg bg-light border-bottom fixed-top ${isScrolled ? 'active' : ''}`} aria-label="Offcanvas navbar large">
+            <nav className={`navbar navbar-expand-lg border-bottom fixed-top ${isScrolled ? 'active' : ''}`} aria-label="Offcanvas navbar large" style={{backgroundColor: '#f8f9fa'}}>
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">
                         <img src={logo} alt="Logo Pedro Mota"/>
@@ -60,13 +60,13 @@ export const Cabecalho = () => {
                         <div className='offcanvas-body'>
                             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li className="nav-item">
-                                    <a className="nav-link text-decoration-none" aria-current="page" href="/" onClick={closeMenu}><i className="fas fa-home nav-icon"></i> Home</a>
+                                    <a className="nav-link text-decoration-none text-dark" aria-current="page" href="/" onClick={closeMenu}><i className="fas fa-home nav-icon"></i> Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link text-decoration-none" href="#about" onClick={closeMenu}><i className="fas fa-user-circle nav-icon"></i> About me</a>
+                                    <a className="nav-link text-decoration-none text-dark" href="#about" onClick={closeMenu}><i className="fas fa-user-circle nav-icon"></i> About me</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link text-decoration-none" href="#contato" onClick={closeMenu}><i className="fas fa-phone-square-alt nav-icon"></i> Contact</a>
+                                    <a className="nav-link text-decoration-none text-dark" href="#contato" onClick={closeMenu}><i className="fas fa-phone-square-alt nav-icon"></i> Contact</a>
                                 </li>
                             </ul>
                         </div>

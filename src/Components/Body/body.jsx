@@ -8,8 +8,10 @@ export const Body = () => {
     return (
         <div>
             <Introduction />
+            <span id='about'></span>
             <AboutMe />
             <FrameworksSvg />
+            <span id="contato"></span>
             <Contact />
             <Map />
         </div>

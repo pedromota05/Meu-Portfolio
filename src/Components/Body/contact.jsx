@@ -47,7 +47,7 @@ export const Contact = () => {
     const notifySuccess = () => toast.success('E-mail enviado com sucesso!');
 
     return (
-        <section className="py-4" id="contato">
+        <section className="py-4" id="">
             <div className="container py-4">
                 <h2 className="text-md lined mb-5" style={{fontWeight: 'bold'}}>Contact</h2>
                 <div className="row">

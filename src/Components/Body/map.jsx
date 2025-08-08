@@ -1,6 +1,7 @@
 export const Map = () => {
     return (
-        <div id="map" className="d-flex justify-content-center" style={{ padding: '0 20px' }}>
+        <section className="container">
+        <div id="map" className="d-flex justify-content-center">
             <iframe 
                 width="1200" 
                 height="400" 
@@ -11,5 +12,6 @@ export const Map = () => {
                 aria-label="Rodoviária de Dourados, Av. Marcelino Píres - Vila Maxwell, Dourados">
             </iframe>
         </div>
+        </section>
     );
 };
